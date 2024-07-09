@@ -12,11 +12,11 @@ app.use("/customer", session({
   saveUninitialized: true
 }));
 
-// JWT authentication middleware (if needed)
-// app.use("/customer/auth/*", function auth(req, res, next) { ... });
 
 app.use("/customer", customer_routes);
-app.use("/", genl_routes); // Ensure this line is present
+
+
+app.use("/", genl_routes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
